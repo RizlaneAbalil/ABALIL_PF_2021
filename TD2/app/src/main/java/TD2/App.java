@@ -5,6 +5,7 @@ package main.java.TD2;
 
 import main.java.TD2.Exercice1.Somme;
 import main.java.TD2.Exercice1.ToString;
+import main.java.TD2.Exercice2.Paire;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -53,6 +54,9 @@ public class App {
         Predicate<Integer> tailleGrande = x -> x > 200;
         Predicate<Integer> tailleIncorrecte = taillePetite.or(tailleGrande);
         Predicate<Integer> tailleCorrecte = tailleIncorrecte.negate();
+        Predicate<Double> poidsLourd = x -> x > 150.0;
+        Predicate<Double> poidsCorrect = poidsLourd.negate();
+        Predicate<Paire<Integer, Double>> accesAutorise = p -> tailleCorrecte.test(p.fst) && poidsCorrect.test(p.snd);
     }
 
     public String getGreeting() {
