@@ -7,6 +7,7 @@ import main.java.TD2.Exercice1.Somme;
 import main.java.TD2.Exercice1.ToString;
 import main.java.TD2.Exercice2.Paire;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -48,8 +49,9 @@ public class App {
         System.out.println(liste.tranform(l));
     }
 
-    public void Exercice2_Question1()
+    public void Exercice2_Question1_2()
     {
+        //Question 1
         Predicate<Integer> taillePetite = x -> x < 100;
         Predicate<Integer> tailleGrande = x -> x > 200;
         Predicate<Integer> tailleIncorrecte = taillePetite.or(tailleGrande);
@@ -57,6 +59,39 @@ public class App {
         Predicate<Double> poidsLourd = x -> x > 150.0;
         Predicate<Double> poidsCorrect = poidsLourd.negate();
         Predicate<Paire<Integer, Double>> accesAutorise = p -> tailleCorrecte.test(p.fst) && poidsCorrect.test(p.snd);
+
+        //Question 2
+        Predicate<Paire<Integer, Double>> taillePetite2 = x -> x.fst < 100;
+        Predicate<Paire<Integer, Double>> tailleGrande2 = x -> x.fst > 200;
+        Predicate<Paire<Integer, Double>> tailleIncorrecte2 = taillePetite2.or(tailleGrande2);
+        Predicate<Paire<Integer, Double>> tailleCorrecte2 = tailleIncorrecte2.negate();
+        Predicate<Paire<Integer, Double>> poidsLourd2 = x -> x.snd > 150.0;
+        Predicate<Paire<Integer, Double>> poidsCorrect2 = poidsLourd2.negate();
+
+
+        List<Paire<Integer, Double>> liste = List.of(new Paire<Integer, Double>(100, 150.0), new Paire<Integer, Double>(150, 60.0), new Paire<Integer, Double>(150, 170.0), new Paire<Integer, Double>(210, 90.0));
+        List<Predicate<Paire<Integer, Double>>> listePredicats = List.of(tailleCorrecte2, poidsCorrect2);
+        filtragePredicatif(listePredicats, liste);
+    }
+
+    public <T> List<T> filtragePredicatif(List<Predicate<T>> conditions, List<T> elements){
+        List<T> rtn = new ArrayList<>();
+        //On récupère les prédicats
+        Predicate<T> predicat = x -> true;
+
+        for(Predicate<T> p : conditions)
+        {
+            predicat = predicat.and(p);
+        }
+
+        //Pour chaque élément en on vérifie qu'il respecte bien le prédicat
+        for(T e : elements) {
+            if (predicat.test(e))
+            {
+                rtn.add(e);
+            }
+        }
+        return rtn;
     }
 
     public String getGreeting() {
