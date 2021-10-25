@@ -11,6 +11,20 @@ public class App {
     {
         //Lambda pour 2 entiers
         Somme<Integer> somme1 = (x,y) -> x+y;
+
+        //Lambda pour 2 doubles
+        Somme<Double> somme2 = (x, y) -> x+y;
+
+        //Lambda pour 2 longs
+        Somme<Long> somme3 = (x, y) -> x+y;
+
+        //Lambda pour 2 strings
+        Somme<String> somme4 = (x,y) -> x+y;
+
+        System.out.println(somme1.somme(1,2));
+        System.out.println(somme2.somme(1.1,2.2));
+        System.out.println(somme3.somme(1L,2L));
+        System.out.println(somme4.somme("toto","titi"));
     }
 
     public String getGreeting() {
