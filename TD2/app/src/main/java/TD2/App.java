@@ -43,6 +43,7 @@ public class App {
             }
             return str.toString();
         };
+        System.out.println(liste.tranform(l));
     }
     public String getGreeting() {
         return "Hello World!";
