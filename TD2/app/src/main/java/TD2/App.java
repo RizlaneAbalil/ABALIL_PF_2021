@@ -4,6 +4,9 @@
 package main.java.TD2;
 
 import main.java.TD2.Exercice1.Somme;
+import main.java.TD2.Exercice1.ToString;
+
+import java.util.List;
 
 public class App {
 
@@ -27,6 +30,20 @@ public class App {
         System.out.println(somme4.somme("toto","titi"));
     }
 
+    public void Exercice1_Question2(){
+        //Lambda pour liste de String
+        List<String> l = List.of("Toto", "Titi");
+        ToString<List<String>> liste = l1 -> {
+            //Je récupère chaque item de liste est j'ajoute une virgule
+            StringBuffer str = new StringBuffer();
+            for(String i: l1)
+            {
+                str.append(i);
+                str.append(",");
+            }
+            return str.toString();
+        };
+    }
     public String getGreeting() {
         return "Hello World!";
     }
