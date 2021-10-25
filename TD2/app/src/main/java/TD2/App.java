@@ -7,6 +7,7 @@ import main.java.TD2.Exercice1.Somme;
 import main.java.TD2.Exercice1.ToString;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class App {
 
@@ -45,6 +46,15 @@ public class App {
         };
         System.out.println(liste.tranform(l));
     }
+
+    public void Exercice2_Question1()
+    {
+        Predicate<Integer> taillePetite = x -> x < 100;
+        Predicate<Integer> tailleGrande = x -> x > 200;
+        Predicate<Integer> tailleIncorrecte = taillePetite.or(tailleGrande);
+        Predicate<Integer> tailleCorrecte = tailleIncorrecte.negate();
+    }
+
     public String getGreeting() {
         return "Hello World!";
     }
