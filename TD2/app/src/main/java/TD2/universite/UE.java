@@ -1,4 +1,4 @@
-package td2.universite;
+package main.java.TD2.universite;
 
 import java.util.Map;
 

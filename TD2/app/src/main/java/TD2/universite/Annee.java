@@ -1,7 +1,9 @@
-package td2.universite;
+package main.java.TD2.universite;
 
 import java.util.HashSet;
 import java.util.Set;
+import main.java.TD2.universite.UE;
+import main.java.TD2.universite.Etudiant;
 
 public class Annee {
     private Set<UE> ues;

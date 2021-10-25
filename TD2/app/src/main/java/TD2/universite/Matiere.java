@@ -1,4 +1,4 @@
-package td2.universite;
+package main.java.TD2.universite;
 
 public class Matiere {
     private String nom;

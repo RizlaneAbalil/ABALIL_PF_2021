@@ -1,8 +1,11 @@
-package td2.universite;
+package main.java.TD2.universite;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import main.java.TD2.universite.Matiere;
+import main.java.TD2.universite.UE;
 
 public class Etudiant {
     private String prenom;
