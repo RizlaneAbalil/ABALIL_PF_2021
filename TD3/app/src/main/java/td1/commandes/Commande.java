@@ -96,6 +96,14 @@ public class Commande {
         return str.toString();
     }
 
+    public <T,U>Map<T, List<U>> regrouper(List<Paire<T, U>> ligne)
+    {
+        Map<T,List<U>> res = new HashMap<>();
+        //On parcourt une liste de ligne
+        ligne.forEach(l -> res.put(l.fst(), new ArrayList<>().add(l.snd()) ));
+        return res;
+    }
+
 
 
 }
