@@ -1,4 +1,4 @@
-package TD3.arbresgeneriques2;
+package td1.arbresgeneriques2;
 
 public class Entier implements Sommable<Entier>, Comparable<Entier> {
     private Integer valeur;

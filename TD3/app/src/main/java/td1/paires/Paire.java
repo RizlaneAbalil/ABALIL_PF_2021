@@ -1,4 +1,4 @@
-package TD3.paires;
+package td1.paires;
 
 public class Paire<A,B> implements IPaire<A,B> {
     private A _fst;

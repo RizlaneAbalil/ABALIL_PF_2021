@@ -1,4 +1,4 @@
-package TD3.paires;
+package td1.paires;
 
 public interface IPaire<A,B> {
     A fst();

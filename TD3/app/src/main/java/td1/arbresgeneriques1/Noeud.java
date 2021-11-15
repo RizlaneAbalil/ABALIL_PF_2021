@@ -1,4 +1,4 @@
-package TD3.arbresgeneriques1;
+package td1.arbresgeneriques1;
 
 import java.util.HashSet;
 import java.util.List;

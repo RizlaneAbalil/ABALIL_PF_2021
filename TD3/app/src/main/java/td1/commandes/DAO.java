@@ -1,4 +1,4 @@
-package TD3.commandes;
+package td1.commandes;
 
 import java.util.List;
 import java.util.Set;
@@ -6,8 +6,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.ArrayList;
 
-import static TD3.commandes.Categorie.*;
-import TD3.paires.Paire;
+import static td1.commandes.Categorie.*;
+import td1.paires.Paire;
 
 public class DAO {
     private List<Commande> commandes;
