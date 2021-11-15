@@ -100,7 +100,7 @@ public class Commande {
     {
         Map<T,List<U>> res = new HashMap<>();
         //On parcourt une liste de ligne
-        ligne.forEach(l -> res.put(l.fst(), new ArrayList<>().add(l.snd()) ));
+        ligne.forEach(l -> res.computeIfAbsent(l.fst(),  a -> new ArrayList<>()).add(l.snd()));
         return res;
     }
 
